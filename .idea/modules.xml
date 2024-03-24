@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/EcommerceResftFullApi.iml" filepath="$PROJECT_DIR$/.idea/EcommerceResftFullApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/EcommerceRestFullApi.iml" filepath="$PROJECT_DIR$/.idea/EcommerceRestFullApi.iml" />
     </modules>
   </component>
 </project>

@@ -8,11 +8,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-
 
 # Application definition
 
@@ -25,8 +22,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # External packages
     'rest_framework',
+    'drf_spectacular',
 
     # Internal apps
+    'EcommerceRestFullApi.product',
 ]
 
 MIDDLEWARE = [
@@ -60,11 +59,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'EcommerceRestFullApi.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-
 
 
 # Password validation
@@ -85,7 +81,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -96,7 +91,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -109,5 +103,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 
+}
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Django DRF Ecommerce API',
+    'DESCRIPTION': 'API for Ecommerce website',
+    'VERSION': '1.0.0',
 }
